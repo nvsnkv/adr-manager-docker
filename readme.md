@@ -2,7 +2,7 @@
 Set of dockerfiles and docker compose to run your own, self-hosted version of [ADR-Manager](https://github.com/adr/adr-manager)
 
 ## How-to
-1. run `git submodule init` to get dependencies
+1. run `git submodule update --init` to get dependencies
 2. use `pizzly/Dockerfile` to build pizzly backend
 3. use `Dockerfile` in the repo root to build the container that will host ADR-Manager app
 4. use `docker-compose.yaml` to run solution
