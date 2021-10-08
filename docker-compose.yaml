@@ -1,0 +1,64 @@
+version: "3.8"
+services:
+  pizzly-db:
+    image: postgres
+    restart: always
+    volumes:
+        - pizzly-data:/var/lib/postgresql/data
+    environment:
+        - POSTGRES_DB=pizzly
+        - POSTGRES_USER=pizzly
+        - "POSTGRES_PASSWORD=${PZ_DB_PWD}"
+
+  pizzly-db-migrations:
+    image: ${PZ_DB_MIGRATIONS_IMAGE-pizzly-db-migrations}
+    build:
+      context: .
+      dockerfile: Dockerfile-pizzly-migrations
+    environment:
+      - DB_USER=pizzly
+      - "DB_PASSWORD=${PZ_DB_PWD}"
+      - DB_HOST=pizzly-db
+    links:
+      - pizzly-db
+    depends_on:
+      - pizzly-db
+
+  pizzly:
+    image: "${PZ_IMAGE-pizzly}"
+    build:
+      context: ./pizzly
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "${PZ_EXT_PORT-8080}:8080"
+    environment:
+      - "DASHBOARD_USERNAME=${PZ_USER-pizzly}"
+      - "DASHBOARD_PASSWORD=${PZ_PWD}"
+      - "SECRET_KEY=${PZ_SECRET}"
+      - "PUBLISHABLE_KEY=${PZ_PUBLISH-de76a475#70c1!49eeZ9cfa39167bfc2b465}"
+      - DB_USER=pizzly
+      - "DB_PASSWORD=${PZ_DB_PWD}"
+      - DB_HOST=pizzly-db
+    links:
+      - pizzly-db
+    depends_on:
+      - pizzly-db
+      - pizzly-db-migrations  
+  adm-manager:
+    image: "${ADRM_IMAGE-adr-manager}"
+    build:
+      context: .
+      dockerfile: Dockerfile-adr-manager
+    restart: always
+    environment:
+      - "PIZZLY_PUBLISHABLE_KEY=${PZ_PUBLISH-de76a475#70c1!49eeZ9cfa39167bfc2b465}"
+      - PIZZLY_HOST=${PZ_EXT_HOST-localhost}:${PZ_EXT_PORT-8080}
+    ports:
+      - "${ADRM_EXT_PORT-8280}:80"
+    links:
+      - pizzly
+    depends_on:
+      - pizzly
+volumes:
+  pizzly-data:
