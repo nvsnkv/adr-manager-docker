@@ -9,8 +9,7 @@ Frankly speaking, not sure it's a good idea. You'll need to setup your own OAuth
 2. set [required](#required-environment-variables) environment variables
 3. run `docker-compose up`
 4. follow [Pizzly readme](https://github.com/Bearer/Pizzly/blob/master/docs/getting-started.md#connect-yourself-to-github) to make one time setup - register OAuth app on Github.
-5. follow [readme](https://github.com/adr/adr-manager#readme)!
-6.  ... and have fun managing ADRs now
+5. follow [readme](https://github.com/adr/adr-manager#readme) and have fun!
 
 ### Required Environment Variables
 `docker-compose.yaml` uses several required environment variables to run the stack:
