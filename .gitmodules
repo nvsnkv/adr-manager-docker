@@ -1,0 +1,6 @@
+[submodule "adr-manager"]
+	path = adr-manager
+	url = https://github.com/adr/adr-manager
+[submodule "pizzly"]
+	path = pizzly
+	url = https://github.com/Bearer/Pizzly
