@@ -6,7 +6,7 @@ Frankly speaking, not sure it's a good idea. You'll need to setup your own OAuth
 
 ## Quick Start
 1. run `git submodule update --init` to get dependencies
-2. set [required](#required_environment_variables) environment variables
+2. set [required](#required-environment-variables) environment variables
 3. run `docker-compose up`
 4. follow [Pizzly readme](https://github.com/Bearer/Pizzly/blob/master/docs/getting-started.md#connect-yourself-to-github) to make one time setup - register OAuth app on Github.
 5. follow [readme](https://github.com/adr/adr-manager#readme)!
