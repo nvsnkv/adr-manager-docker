@@ -1,4 +1,4 @@
-# Self-Hosted ADRM-anager Instance
+# Self-Hosted ADR-Manager Instance
 Set of dockerfiles and docker compose to run your own, self-hosted version of [ADR-Manager](https://github.com/adr/adr-manager)
 
 ## Should I Use It?
