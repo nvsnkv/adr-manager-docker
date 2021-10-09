@@ -29,7 +29,7 @@ Following environment variables have default values in compose file, but nothing
 First group of optional variables is the names of the images:
 * PZ_IMAGE=pizzly - the name of the pizzly image. There is no official build from maintainers, but you can use someone's image from docker hub or build it and publish into your own repo.
 * PZ_DB_MIGRATIONS_IMAGE=pizzly-db-migrations - the name of the image that runs database migrations for Pizzly. 
-* ADRM_IMAGE=adr_manager - the name of the ard-manager image. Similar to PZ_IMAGE, it was introduced since maintainers of ADM did not publish official image to docker hub 
+* ADRM_IMAGE=adr_manager - the name of the ADR-Manager image. Similar to PZ_IMAGE, it was introduced since maintainers of ADR-Manager did not publish official image to docker hub 
 
 Next group defines external connections for the services:
 * ADRM_EXT_PORT=8280 - external port for ADR Manager UI
