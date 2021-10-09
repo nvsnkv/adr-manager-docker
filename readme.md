@@ -4,6 +4,8 @@ Set of dockerfiles and docker compose to run your own, self-hosted version of [A
 ## Should I Use It?
 Frankly speaking, not sure it's a good idea. You'll need to setup your own OAuth app on Github to make it work, wich is definitely harder then just opening [ADR-Manager](https://adr.github.io/adr-manager/#/) instance that's hosted by maintainers of this project.
 
+I did not find any solid reason not to use publicly hosted instance. Self-hosted instance just transfers the responsibility to secure it back to you, so you won't be able to blame anyone except you if someone will steal your credentials and wipe out your repos.
+
 ## Quick Start
 1. run `git submodule update --init` to get dependencies
 2. set [required](#required-environment-variables) environment variables
