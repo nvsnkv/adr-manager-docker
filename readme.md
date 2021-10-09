@@ -21,6 +21,7 @@ I did not find any solid reason not to use publicly hosted instance. Self-hosted
 In addition to passwords, Pizzly requires following keys to be defined to secure the instance:
 * PZ_SECRET - Pizzly SECRET_KEY
 * PZ_PUBLISH - Pizzly PUBLISHABLE_KEY 
+
 The details about these keys can be found [here](https://github.com/Bearer/Pizzly/blob/master/docs/securing-your-instance.md)
 
 ### Optional Environment Variables
