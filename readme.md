@@ -10,7 +10,7 @@ I did not find any solid reason not to use publicly hosted instance. Self-hosted
 1. run `git submodule update --init` to get dependencies
 2. set [required](#required-environment-variables) environment variables
 3. run `docker-compose up`
-4. follow [Pizzly readme](https://github.com/Bearer/Pizzly/blob/master/docs/getting-started.md#connect-yourself-to-github) to make one time setup - register OAuth app on Github. Host and port for callback URL are controlled by optional _PZ_EXT_HOST_ and _PZ_EXY_PORT_ variables. Please note that following scopes are required: `user`, `repo`. Without them ADR-Manager won't be able to commit and push the changes to repos.
+4. follow [Pizzly readme](https://github.com/Bearer/Pizzly/blob/master/docs/getting-started.md#connect-yourself-to-github) to make one time setup - register OAuth app on Github. Host and port for callback URL are controlled by optional _PZ_EXT_HOST_ and _PZ_EXT_PORT_ variables. Please note that following scopes are required: `user`, `repo`. Without them ADR-Manager won't be able to commit and push the changes to repos.
 5. follow [readme](https://github.com/adr/adr-manager#readme) and have fun!
 
 ### Required Environment Variables
